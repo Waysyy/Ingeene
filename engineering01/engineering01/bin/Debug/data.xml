@@ -1,0 +1,53 @@
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="MyDataTable" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="MyDataTable">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Column5" type="xs:string" minOccurs="0" />
+                <xs:element name="Column2" type="xs:string" minOccurs="0" />
+                <xs:element name="Column3" type="xs:string" minOccurs="0" />
+                <xs:element name="Column6" type="xs:string" minOccurs="0" />
+                <xs:element name="Column4" type="xs:string" minOccurs="0" />
+                <xs:element name="Column7" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <MyDataTable>
+    <Column5>Удобство работы 
+(пользовательский интерфейс)</Column5>
+  </MyDataTable>
+  <MyDataTable>
+    <Column5>Новизна (соответствие современным
+требованиям)</Column5>
+  </MyDataTable>
+  <MyDataTable>
+    <Column5>Соответствие профилю деятельности
+заказчика</Column5>
+  </MyDataTable>
+  <MyDataTable>
+    <Column5>Ресурсная эффективность</Column5>
+  </MyDataTable>
+  <MyDataTable>
+    <Column5>Надежность (защита данных) </Column5>
+  </MyDataTable>
+  <MyDataTable>
+    <Column5>Скорость доступа к данным</Column5>
+  </MyDataTable>
+  <MyDataTable>
+    <Column5>Гибкость настройки</Column5>
+  </MyDataTable>
+  <MyDataTable>
+    <Column5>Обучаемость персонала</Column5>
+  </MyDataTable>
+  <MyDataTable>
+    <Column5>Соотношение стоимость/возможности </Column5>
+  </MyDataTable>
+  <MyDataTable />
+</NewDataSet>
