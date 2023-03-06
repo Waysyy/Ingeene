@@ -14,6 +14,7 @@ namespace engineering01
 {
     public partial class Form3 : Form
     {
+        public double machineHour = 0;
         public Form3()
         {
             InitializeComponent();
@@ -287,6 +288,11 @@ namespace engineering01
                 string column3Value = dataGridView1.Rows[i].Cells[2].Value.ToString();
                 string column4Value = dataGridView1.Rows[i].Cells[3].Value.ToString();
 
+                if(column1Value.Contains("программист") || column1Value.Contains("Программист"))
+                {
+                    machineHour = 24 * Convert.ToDouble(column4Value);
+                }    
+
 
                 dataGridView1.Rows[i].Cells[4].Value = Convert.ToDouble(column2Value) * Convert.ToDouble(column3Value);
                 
@@ -300,6 +306,97 @@ namespace engineering01
             }
 
             dataGridView1.Rows[dataGridView1.Rows.Count-1].Cells[4].Value = countRows;
+
+            int length1 = dataGridView2.Rows.Count - 1;
+            double countRows1 = 0;
+            for (int i = 0; i < length1; i++)
+            {
+
+                string column1Value = dataGridView2.Rows[i].Cells[0].Value.ToString();
+                string column2Value = dataGridView2.Rows[i].Cells[1].Value.ToString();
+                string column3Value = dataGridView2.Rows[i].Cells[2].Value.ToString();
+                string column4Value = dataGridView2.Rows[i].Cells[3].Value.ToString();
+
+
+                dataGridView2.Rows[i].Cells[4].Value = Convert.ToDouble(column2Value) * Convert.ToDouble(column3Value);
+
+            }
+
+            for (int i = 0; i < length1; i++)
+            {
+                string column5Value = dataGridView2.Rows[i].Cells[4].Value.ToString();
+                countRows1 += Convert.ToDouble(column5Value);
+
+            }
+
+            dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells[4].Value = countRows1;
+
+            
+            DataTable table2 = new DataTable();
+            
+
+            foreach (DataGridViewColumn column in dataGridView3.Columns)
+            {
+                table2.Columns.Add(column.HeaderText);
+            }
+            int stopper2 = 0;
+            foreach (DataGridViewRow row in dataGridView3.Rows)
+            {
+                object[] rowData = new object[row.Cells.Count];
+                for (int i = 0; i < row.Cells.Count; i++)
+                {
+                    rowData[i] = row.Cells[i].Value;
+                }
+                table2.Rows.Add(rowData);
+                ++stopper2;
+                if (stopper2 == dataGridView3.Rows.Count - 1)
+                {
+                    break;
+                }
+
+            }
+            if(dataGridView3.Rows.Count < 4)
+            {
+                for (int i = 0; i <= 4; ++i)
+                {
+                    table2.Rows.Add();
+                }
+            }
+            
+            
+            BindingSource bindingSource2 = new BindingSource();
+            bindingSource2.DataSource = table2;
+            dataGridView3.DataSource = bindingSource2;
+
+            dataGridView3.Rows[0].Cells[0].Value = "Основная заработная плата";
+            dataGridView3.Rows[0].Cells[1].Value = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[4].Value;
+            dataGridView3.Rows[1].Cells[0].Value = "Дополнительная заработная плата";
+            dataGridView3.Rows[1].Cells[1].Value = Convert.ToDouble(dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[4].Value)*0.4;
+            dataGridView3.Rows[2].Cells[0].Value = "Отчисления на социальные нужды";
+            dataGridView3.Rows[2].Cells[1].Value = Convert.ToDouble(dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[4].Value) * 0.45;
+            dataGridView3.Rows[3].Cells[0].Value = "Затраты на материалы";
+            dataGridView3.Rows[3].Cells[1].Value = dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells[4].Value;
+            dataGridView3.Rows[4].Cells[0].Value = "Затраты на машинное время";
+            dataGridView3.Rows[4].Cells[1].Value = machineHour * 20;
+            dataGridView3.Rows[5].Cells[0].Value = "Накладные расходы организации";
+            dataGridView3.Rows[5].Cells[1].Value = Convert.ToDouble(dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[4].Value) * 0.6;
+
+            int length2 = dataGridView3.Rows.Count - 1;
+            double countRows2 = 0;
+
+            for (int i = 0; i < length2; i++)
+            {
+                string column5Value = dataGridView3.Rows[i].Cells[1].Value.ToString();
+                if(column5Value != "")
+                countRows2 += Convert.ToDouble(column5Value);
+
+            }
+            dataGridView3.Rows[dataGridView3.Rows.Count - 1].Cells[1].Value = countRows2;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

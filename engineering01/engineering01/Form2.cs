@@ -9,6 +9,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace engineering01
 {
@@ -22,32 +23,35 @@ namespace engineering01
 
         public void calculation()
         {
+            
+
             for (int i = 0; i < dataGridView1.Rows.Count-1; i++)
             {
                 
+
                 string column1Value = dataGridView1.Rows[i].Cells[0].Value.ToString();
                 string column2Value = dataGridView1.Rows[i].Cells[1].Value.ToString();
                 string column3Value = dataGridView1.Rows[i].Cells[2].Value.ToString();
                 string column4Value = dataGridView1.Rows[i].Cells[3].Value.ToString();
 
-                for (int j = 0; j < dataGridView2.Rows.Count; j++)
-                {
+               
                     
-                    dataGridView2.Rows[j].Cells[0].Value = column1Value;
-                    dataGridView2.Rows[j].Cells[1].Value = column2Value;
-                    dataGridView2.Rows[j].Cells[2].Value = column3Value;
+
+                    dataGridView2.Rows[i].Cells[0].Value = column1Value;
+                    dataGridView2.Rows[i].Cells[1].Value = column2Value;
+                    dataGridView2.Rows[i].Cells[2].Value = column3Value;
 
 
                     DateTime currentDate = DateTime.Now.Date;
-                    dataGridView2.Rows[j].Cells[3].Value = currentDate.ToShortDateString();
+                    dataGridView2.Rows[i].Cells[3].Value = currentDate.ToShortDateString();
 
                     
                     int days = Convert.ToInt32(column4Value);
                     
                     DateTime calculatedDate = currentDate.AddDays(days-1);
                     
-                    dataGridView2.Rows[j].Cells[4].Value = calculatedDate.ToShortDateString();
-                }
+                    dataGridView2.Rows[i].Cells[4].Value = calculatedDate.ToShortDateString();
+                
 
                 dataGridView1.Rows[i].Cells[4].Value = Math.Round((Convert.ToDouble(column4Value) * 100) / Convert.ToDouble(column3Value));
             }

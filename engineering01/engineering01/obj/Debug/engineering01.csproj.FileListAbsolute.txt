@@ -11,3 +11,16 @@ A:\GitProjects\engineering01\engineering01\obj\Debug\engineering01.exe
 A:\GitProjects\engineering01\engineering01\obj\Debug\engineering01.pdb
 A:\GitProjects\engineering01\engineering01\obj\Debug\engineering01.Form2.resources
 A:\GitProjects\engineering01\engineering01\obj\Debug\engineering01.Form3.resources
+D:\Users\ntart\Ingeene\engineering01\engineering01\bin\Debug\engineering01.exe.config
+D:\Users\ntart\Ingeene\engineering01\engineering01\bin\Debug\engineering01.exe
+D:\Users\ntart\Ingeene\engineering01\engineering01\bin\Debug\engineering01.pdb
+D:\Users\ntart\Ingeene\engineering01\engineering01\obj\Debug\engineering01.csproj.AssemblyReference.cache
+D:\Users\ntart\Ingeene\engineering01\engineering01\obj\Debug\engineering01.csproj.SuggestedBindingRedirects.cache
+D:\Users\ntart\Ingeene\engineering01\engineering01\obj\Debug\engineering01.Form1.resources
+D:\Users\ntart\Ingeene\engineering01\engineering01\obj\Debug\engineering01.Form2.resources
+D:\Users\ntart\Ingeene\engineering01\engineering01\obj\Debug\engineering01.Form3.resources
+D:\Users\ntart\Ingeene\engineering01\engineering01\obj\Debug\engineering01.Properties.Resources.resources
+D:\Users\ntart\Ingeene\engineering01\engineering01\obj\Debug\engineering01.csproj.GenerateResource.cache
+D:\Users\ntart\Ingeene\engineering01\engineering01\obj\Debug\engineering01.csproj.CoreCompileInputs.cache
+D:\Users\ntart\Ingeene\engineering01\engineering01\obj\Debug\engineering01.exe
+D:\Users\ntart\Ingeene\engineering01\engineering01\obj\Debug\engineering01.pdb
