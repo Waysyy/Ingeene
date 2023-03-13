@@ -24,3 +24,5 @@ D:\Users\ntart\Ingeene\engineering01\engineering01\obj\Debug\engineering01.cspro
 D:\Users\ntart\Ingeene\engineering01\engineering01\obj\Debug\engineering01.csproj.CoreCompileInputs.cache
 D:\Users\ntart\Ingeene\engineering01\engineering01\obj\Debug\engineering01.exe
 D:\Users\ntart\Ingeene\engineering01\engineering01\obj\Debug\engineering01.pdb
+D:\Users\ntart\Ingeene\engineering01\engineering01\obj\Debug\engineering01.Form4.resources
+D:\Users\ntart\Ingeene\engineering01\engineering01\obj\Debug\engineering01.Form5.resources

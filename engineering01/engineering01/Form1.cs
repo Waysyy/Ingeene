@@ -113,8 +113,8 @@ namespace engineering01
         private void button2_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();
-            this.Hide();
             form2.Show();
+            this.Hide();
             createDataSource();
             SaveData();
         }
