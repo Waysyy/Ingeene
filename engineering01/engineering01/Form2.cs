@@ -61,7 +61,24 @@ namespace engineering01
 
         private void button1_Click(object sender, EventArgs e)
         {
-            calculation();
+            Class1 classCheck = new Class1();
+
+            if (classCheck.ChekTable(dataGridView1, null, null, "string",0,0) == true)
+            {
+                if (classCheck.ChekTable(dataGridView1, null, null, "double", 2, 0) == true)
+                {
+                    calculation();
+                }
+                else
+                {
+                    MessageBox.Show("Кажется вы что-то не так ввели");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Кажется вы что-то не так ввели");
+            }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -245,6 +262,13 @@ namespace engineering01
             this.Hide();
             createDataSource();
             SaveData();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            this.Hide();
+            form1.Show();
         }
     }
 }

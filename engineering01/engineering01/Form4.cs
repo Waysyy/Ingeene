@@ -125,8 +125,8 @@ namespace engineering01
             column32.HeaderText = "Затраты на аналог,руб.";
             column32.Name = "Column2";
 
-
             this.dataGridView3.Columns.AddRange(new DataGridViewColumn[] { column12, column22, column32 });
+            dataGridView3.Rows.Add(6);
 
             dataGridView1.Visible = true;
             dataGridView2.Visible = false;
@@ -135,10 +135,27 @@ namespace engineering01
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            calculation();
-            dataGridView1.Visible = false;
-            dataGridView2.Visible = false;
-            dataGridView3.Visible = true;
+            Class1 classCheck = new Class1();
+
+            if (classCheck.ChekTable(dataGridView1, null, null, "double", 0, 0) == true)
+            {
+                if (classCheck.ChekTable(dataGridView2, null, null, "double", 0, 0) == true)
+                {
+                    calculation();
+                    dataGridView1.Visible = false;
+                    dataGridView2.Visible = false;
+                    dataGridView3.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Кажется вы что-то не так ввели");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Кажется вы что-то не так ввели");
+            }
+            
         }
 
         public void calculation()
@@ -219,12 +236,66 @@ namespace engineering01
                 }
 
             }
-            
-                table2.Rows.Add();
+
+            double sumRows4 = 0;
+            for(int i = 0; i < dataGridView1.Rows.Count; ++i)
+            {
+                sumRows4 += Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value);
+            }
+            double sumRows5 = 0;
+            for (int i = 0; i < dataGridView2.Rows.Count; ++i)
+            {
+                sumRows5 += Convert.ToDouble(dataGridView2.Rows[i].Cells[3].Value);
+            }
+
+            table2.Rows.Add();
 
             BindingSource bindingSource2 = new BindingSource();
             bindingSource2.DataSource = table2;
             dataGridView3.DataSource = bindingSource2;
+
+            Random rand = new Random();
+
+            dataGridView3.Rows[1].Cells[0].Value = "Амортизационные отчисления";
+            dataGridView3.Rows[1].Cells[1].Value = (22500 * 0.2 * 1 * (sumRows4 * 8)) / 1976;
+            dataGridView3.Rows[1].Cells[2].Value = (22500 * 0.2 * 1 * (sumRows5 * 8)) / 1976;
+
+            dataGridView3.Rows[2].Cells[0].Value = "Затраты на электроэнергию";
+            dataGridView3.Rows[2].Cells[1].Value = rand.Next(2000);
+            dataGridView3.Rows[2].Cells[2].Value = rand.Next(2000);
+
+            dataGridView3.Rows[3].Cells[0].Value = "Затраты на текущий ремонт";
+            dataGridView3.Rows[3].Cells[1].Value = rand.Next(700);
+            dataGridView3.Rows[3].Cells[2].Value = rand.Next(700);
+
+            dataGridView3.Rows[4].Cells[0].Value = "Затраты на материалы";
+            dataGridView3.Rows[4].Cells[1].Value = rand.Next(400);
+            dataGridView3.Rows[4].Cells[2].Value = rand.Next(400);
+
+            int length4 = dataGridView3.Rows.Count - 1;
+            double rowsSum1 = 0;
+
+            double rowsSum2 = 0;
+
+            for (int i = 0; i < length4; i++)
+            {
+                string column5Value = dataGridView3.Rows[i].Cells[2].Value.ToString();
+                if (column5Value != "")
+                    rowsSum2 += Convert.ToDouble(column5Value);
+
+            }
+            for (int i = 0; i < length4; i++)
+            {
+                string column5Value = dataGridView3.Rows[i].Cells[2].Value.ToString();
+                if (column5Value != "")
+                    rowsSum1 += Convert.ToDouble(column5Value);
+
+            }
+
+
+            dataGridView3.Rows[5].Cells[0].Value = "Накладные расходы ";
+            dataGridView3.Rows[5].Cells[1].Value = rowsSum1 * 0.2;
+            dataGridView3.Rows[5].Cells[2].Value = rowsSum2 * 0.2;
 
             int length3 = dataGridView3.Rows.Count-1;
             double projectCount = 0;
@@ -243,25 +314,10 @@ namespace engineering01
 
             }
 
+            
 
-            int length4 = dataGridView3.Rows.Count - 1;
-            double rowsSum1 = 0;
-
-            double rowsSum2 = 0;
-
-            for (int i = 0; i < length4; i++)
-            {
-                string column5Value = dataGridView3.Rows[i].Cells[2].Value.ToString();
-                if (column5Value != "")
-                    rowsSum2 += Convert.ToDouble(column5Value);
-
-            }
-            dataGridView3.Rows[dataGridView3.Rows.Count - 2].Cells[0].Value = "Накладные расходы ";
-            dataGridView3.Rows[dataGridView3.Rows.Count - 2].Cells[1].Value = rowsSum1 * 0.2;
-            dataGridView3.Rows[dataGridView3.Rows.Count - 2].Cells[2].Value = rowsSum2 * 0.2;
-
-            dataGridView3.Rows[dataGridView3.Rows.Count-1].Cells[2].Value = competitorCount;
-            dataGridView3.Rows[dataGridView3.Rows.Count-1].Cells[1].Value = projectCount;
+            dataGridView3.Rows[6].Cells[2].Value = competitorCount;
+            dataGridView3.Rows[6].Cells[1].Value = projectCount;
 
             
 
@@ -272,6 +328,8 @@ namespace engineering01
                     rowsSum1 += Convert.ToDouble(column5Value);
 
             }
+
+            
         }
 
         private void SaveData()
@@ -439,6 +497,13 @@ namespace engineering01
             dataGridView1.Visible = false;
             dataGridView2.Visible = false;
             dataGridView3.Visible = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            this.Hide();
+            form3.Show();
         }
     }
 }

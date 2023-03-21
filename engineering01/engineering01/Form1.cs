@@ -10,11 +10,13 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace engineering01
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
          
@@ -25,6 +27,7 @@ namespace engineering01
             this.dataGridView1.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
         }
 
+        
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -41,9 +44,6 @@ namespace engineering01
                     column2Value = Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value);
                 }
 
-                
-
-                
                 double column3Value = Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value);
 
                 
@@ -105,9 +105,19 @@ namespace engineering01
 
         private void button1_Click(object sender, EventArgs e)
         {
-            check_KTU();
-            
+            Class1 classCheck = new Class1();
+            DataTable dt = new DataTable();
+            dt = classCheck.ConvertDGV(dataGridView1);
 
+
+            if (classCheck.ChekTable(dataGridView1, null, null, "double", 1, 1) == true)
+            { check_KTU(); }
+            else
+            {
+                MessageBox.Show("Кажется вы что-то не так ввели");
+            }
+
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

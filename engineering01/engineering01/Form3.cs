@@ -19,6 +19,9 @@ namespace engineering01
         {
             InitializeComponent();
             LoadData();
+            dataGridView1.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -273,7 +276,24 @@ namespace engineering01
 
         private void button1_Click(object sender, EventArgs e)
         {
-            calculation();
+            Class1 classCheck = new Class1();
+
+            if (classCheck.ChekTable(dataGridView1, null, null, "double", 1, 0) == true)
+            {
+                if (classCheck.ChekTable(dataGridView2, null, null, "double", 1, 0) == true)
+                {
+                    calculation();
+                }
+                else
+                {
+                    MessageBox.Show("Кажется вы что-то не так ввели");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Кажется вы что-то не так ввели");
+            }
+
         }
 
         public void calculation()
@@ -397,6 +417,13 @@ namespace engineering01
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            this.Hide();
+            form2.Show();
         }
     }
 
