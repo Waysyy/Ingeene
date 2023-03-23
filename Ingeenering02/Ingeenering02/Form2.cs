@@ -16,5 +16,10 @@ namespace Ingeenering02
         {
             InitializeComponent();
         }
+
+        private void next2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

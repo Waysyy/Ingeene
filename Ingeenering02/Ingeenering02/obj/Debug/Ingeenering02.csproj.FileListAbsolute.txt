@@ -1,11 +1,12 @@
-A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\bin\Debug\Ingeenering02.exe.config
-A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\bin\Debug\Ingeenering02.exe
-A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\bin\Debug\Ingeenering02.pdb
 A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\Ingeenering02.csproj.AssemblyReference.cache
 A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\Ingeenering02.csproj.SuggestedBindingRedirects.cache
 A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\Ingeenering02.Form1.resources
 A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\Ingeenering02.Properties.Resources.resources
 A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\Ingeenering02.csproj.GenerateResource.cache
 A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\Ingeenering02.csproj.CoreCompileInputs.cache
-A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\Ingeenering02.exe
-A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\Ingeenering02.pdb
+A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\Ingeenering02.Form2.resources
+A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\bin\Debug\е.exe.config
+A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\bin\Debug\е.exe
+A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\bin\Debug\е.pdb
+A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\е.exe
+A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\е.pdb
