@@ -10,3 +10,15 @@ A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\bin\Debug\е.exe
 A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\bin\Debug\е.pdb
 A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\е.exe
 A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\е.pdb
+D:\Users\ntart\Ingeene\Ingeenering02\Ingeenering02\bin\Debug\е.exe.config
+D:\Users\ntart\Ingeene\Ingeenering02\Ingeenering02\bin\Debug\е.exe
+D:\Users\ntart\Ingeene\Ingeenering02\Ingeenering02\bin\Debug\е.pdb
+D:\Users\ntart\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\Ingeenering02.csproj.AssemblyReference.cache
+D:\Users\ntart\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\Ingeenering02.csproj.SuggestedBindingRedirects.cache
+D:\Users\ntart\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\Ingeenering02.Form1.resources
+D:\Users\ntart\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\Ingeenering02.Form2.resources
+D:\Users\ntart\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\Ingeenering02.Properties.Resources.resources
+D:\Users\ntart\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\Ingeenering02.csproj.GenerateResource.cache
+D:\Users\ntart\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\Ingeenering02.csproj.CoreCompileInputs.cache
+D:\Users\ntart\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\е.exe
+D:\Users\ntart\Ingeene\Ingeenering02\Ingeenering02\obj\Debug\е.pdb

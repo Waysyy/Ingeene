@@ -18,6 +18,27 @@ namespace Ingeenering02
     {
         private double a, b, c, d = 0;
         
+        public bool checkTextBox(string text)
+        {
+            try
+            {
+                if(string.IsNullOrWhiteSpace(text))
+                {
+                    return false;
+                }
+                else
+                {
+                    Convert.ToDouble(text);
+                    return true;
+                }
+                
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -101,7 +122,7 @@ namespace Ingeenering02
         }
         public double[] EMAdvanced()
         {
-            double[,] EMArray = ExcelRead(@"A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\bin\Debug\EM1.xlsx");
+            double[,] EMArray = ExcelRead(@"D:\Users\ntart\Ingeene\Ingeenering02\Ingeenering02\bin\Debug\EM1.xlsx");
 
             double[] EM = new double[1];
 
@@ -152,7 +173,7 @@ namespace Ingeenering02
         }
         public double[] EMEarly()
         {
-            double[,] EMArray = ExcelRead(@"A:\GitProjects\Ingeene\Ingeenering02\Ingeenering02\bin\Debug\EM0.xlsx");
+            double[,] EMArray = ExcelRead(@"D:\Users\ntart\Ingeene\Ingeenering02\Ingeenering02\bin\Debug\EM0.xlsx");
 
             double[] EM = new double[1];
 
@@ -739,7 +760,6 @@ namespace Ingeenering02
         {
             panel12.Visible = true;
             
-            
         }
 
         
@@ -755,7 +775,6 @@ namespace Ingeenering02
         private void button4_Click(object sender, EventArgs e)
         {
             panel18.Visible = true;
-
 
         }
 
@@ -787,7 +806,7 @@ namespace Ingeenering02
             }
             double E = B + 0.01 * SFEnd;
 
-            if(textBox3.Text != String.Empty)
+            if(textBox3.Text != String.Empty && checkTextBox(textBox3.Text) == true)
             {
                 PM = EAF * A * Math.Pow(Convert.ToDouble(textBox3.Text), E);
                 TM = 3.67 * Math.Pow(PM, (0.28 + 0.2 * (E - B)));
@@ -872,7 +891,7 @@ namespace Ingeenering02
                     EAF *= EM[i];
             }
             double E = B + 0.01 * SFEnd;
-            if (textBox2.Text != String.Empty)
+            if (textBox2.Text != String.Empty && checkTextBox(textBox2.Text) == true)
             {
                 PM = EAF * A * Math.Pow(Convert.ToDouble(textBox2.Text), E);
                 TM = 3.67 * Math.Pow(PM, (0.28 + 0.2 * (E - B)));
@@ -915,17 +934,19 @@ namespace Ingeenering02
             }
             if (radioButton1.Checked)
             {
-                if (textBox1.Text != String.Empty)
+                if (textBox1.Text != String.Empty && checkTextBox(textBox1.Text) == true)
                 {
                     PM = a * Math.Pow(Convert.ToDouble(textBox1.Text), b); //трудоемкость
                     TM = c * Math.Pow(PM,d); //время разработки в месяцах
+                    label13.Text = PM.ToString();
+                    label14.Text = TM.ToString();
                 }
                 else
                 {
                     MessageBox.Show("Заполните все поля!");
                 }
             }
-            if (textBox2.Text != String.Empty)
+            if (textBox1.Text != String.Empty && checkTextBox(textBox1.Text) == true)
             {
                 label13.Text = PM.ToString();
                 label14.Text = TM.ToString();
